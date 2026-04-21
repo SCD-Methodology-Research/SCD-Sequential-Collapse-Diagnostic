@@ -1,0 +1,9 @@
+Dataset,K,R_ratio,effrank,PC1_var (%),NDC-6 violated,NDC-6-Strong
+i.i.d.,2,0.9984007994243581,16,16.056152,False,False
+i.i.d.,4,0.9951255389551897,16,16.056152,False,False
+i.i.d.,6,0.9951348854427807,16,16.056152,False,False
+i.i.d.,8,0.99431189593838,16,16.056152,False,False
+Markov (persistence),2,0.07264982102502915,3,97.37675,True,True
+Markov (persistence),4,0.07143633807592135,3,97.37675,True,True
+Markov (persistence),6,0.3609822329011232,3,97.37675,True,True
+Markov (persistence),8,0.4350724623499228,3,97.37675,True,True
