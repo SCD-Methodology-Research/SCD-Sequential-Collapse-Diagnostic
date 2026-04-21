@@ -20,17 +20,17 @@ This repository contains all data, code, and figures necessary to reproduce the 
 │ ├── 08_scd_k_sensitivity_figure_table.ipynb
 │ └── 09_noise_robustness.ipynb
 ├── results/
-│ ├── Figure_1_phase_transition_plot.tiff
-│ ├── Figure_2_tsne_k4.tiff
-│ ├── Figure_3_R_ratio_comparison_log.tiff
-│ ├── Figure_4_GRT_vs_WW.tiff
-│ ├── Figure_5_negative_control.tiff
-│ ├── Figure_6_sp500.tiff
-│ ├── Figure_7_lyapunov_vs_grt.tiff
-│ ├── Figure_8_rratio_null_histogram.tiff
-│ ├── Figure_9_left_noise_sensitivity_Rratio.tiff
-│ ├── Figure_9_right_mixed_signal_Rratio.tiff
-│ ├── Figure_10_scd_sensitivity_Rratio.tiff
+│ ├── Figure_1_phase_transition_plot.png
+│ ├── Figure_2_tsne_k4.png
+│ ├── Figure_3_R_ratio_comparison_log.png
+│ ├── Figure_4_GRT_vs_WW.png
+│ ├── Figure_5_negative_control.png
+│ ├── Figure_6_sp500.png
+│ ├── Figure_7_lyapunov_vs_grt.png
+│ ├── Figure_8_rratio_null_histogram.png
+│ ├── Figure_9_left_noise_sensitivity_Rratio.png
+│ ├── Figure_9_right_mixed_signal_Rratio.png
+│ ├── Figure_10_scd_sensitivity_Rratio.png
 │ └── scd_sensitivity_table.csv
 ├── requirements.txt
 └── README.md```
