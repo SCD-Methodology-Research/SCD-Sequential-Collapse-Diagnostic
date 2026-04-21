@@ -6,7 +6,8 @@ This repository contains all data, code, and figures necessary to reproduce the 
 *Submitted to Chaos, Solitons & Fractals*
 
 ## Repository structure
-```├── data/
+```
+├── data/
 │ └── Lotofacil.xlsx # Lotofácil lottery draws (3,601 draws, 15 numbers per draw)
 ├── notebooks/
 │ ├── 01_transformer_causal.ipynb
