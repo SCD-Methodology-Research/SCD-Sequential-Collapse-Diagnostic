@@ -9,8 +9,8 @@ This repository contains all data, code, and figures necessary to reproduce the 
 ```
 .
 ├── data/
-│ ├── Lotofacil.xlsx # Lotofácil lottery draws (3,601 draws, 15 numbers per draw)
-│ ├── ECG5000_TRAIN.ts # ECG5000 training set (UCR Time Series Archive)
+│ ├── Lotofacil.xlsx # Lotofácil lottery draws (3,601 draws)
+│ ├── ECG5000_TRAIN.ts # ECG5000 training set
 │ └── ECG5000_TEST.ts # ECG5000 test set
 ├── notebooks/
 │ ├── 01_transformer_causal.ipynb
@@ -22,23 +22,47 @@ This repository contains all data, code, and figures necessary to reproduce the 
 │ ├── 07_scd_k_sensitivity.ipynb
 │ ├── 08_scd_k_sensitivity_figure_table.ipynb
 │ ├── 09_noise_robustness.ipynb
-│ └── 10_SCD_on_ECG5000_dataset.ipynb # ECG5000 experiment
+│ ├── 10_SCD_on_ECG5000_dataset.ipynb
+│ └── 11_lyapunov_vs_grt.ipynb
 ├── results/
-│ ├── Figure_1_phase_transition_plot.png
-│ ├── Figure_2_tsne_k4.png
-│ ├── Figure_3_R_ratio_comparison_log.png
-│ ├── Figure_4_GRT_vs_WW.png
-│ ├── Figure_5_negative_control.png
-│ ├── Figure_6_sp500.png
-│ ├── Figure_7_lyapunov_vs_grt.png
-│ ├── Figure_8_rratio_null_histogram.png
-│ ├── Figure_9_left_noise_sensitivity_Rratio.png
-│ ├── Figure_9_right_mixed_signal_Rratio.png
-│ ├── Figure_10_scd_sensitivity_Rratio.png
-│ ├── Figure_11_ecg5000_sensitivity_Rratio.png
+│ ├── Figure_1_phase_transition_plot.tiff
+│ ├── Figure_2_tsne_k4.tiff
+│ ├── Figure_3_R_ratio_comparison_log.tiff
+│ ├── Figure_4_GRT_vs_WW.tiff
+│ ├── Figure_5_negative_control.tiff
+│ ├── Figure_6_sp500.tiff
+│ ├── Figure_7_ecg5000_sensitivity_Rratio.tiff
+│ ├── Figure_8_lyapunov_vs_grt.tiff
+│ ├── Figure_9_rratio_null_histogram.tiff
+│ ├── Figure_10_left_noise_sensitivity_Rratio.tiff
+│ ├── Figure_10_right_mixed_signal_Rratio.tiff
+│ ├── Figure_11_scd_sensitivity_Rratio.tiff
 │ └── scd_sensitivity_table.csv
 ├── requirements.txt
 └── README.md```
+
+## Version 3 — Important corrections
+
+Version 3 incorporates the following corrections identified during a
+comprehensive audit of the manuscript and the codebase:
+
+- **Notebook 04 (`04_SCD_VQVAE_CPC.ipynb`):** The `grt_pvalue` function
+  has been rewritten to use the exact transition probability and variance
+  formulas of Barton & David (1957) for sampling without replacement.
+  The original implementation used an asymptotic approximation that
+  assumed sampling with replacement. This correction does not affect any
+  of the results reported in the paper: the normalised runs ratio
+  (`R_ratio`), which is the basis of the NDC‑6 criterion, was always
+  computed correctly, and the corrected p‑values remain at
+  machine‑precision zero for all collapsed models.
+
+- **Figure 4 (`Figure_4_GRT_vs_WW.tiff`)** has been regenerated with the
+  corrected implementation.
+
+- **Notebook 11 (`11_lyapunov_vs_grt.ipynb`)** has been added to
+  generate `Figure_8_lyapunov_vs_grt.tiff` using the corrected GRT.
+
+- **Figure numbering** has been updated to match the final manuscript.
 
 ## Requirements
 
