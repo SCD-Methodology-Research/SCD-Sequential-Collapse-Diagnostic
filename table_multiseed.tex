@@ -1,0 +1,71 @@
+% =====================================================================
+%  Multi-seed robustness table (ECG5000, 30 seeds 42--71). v4.
+%
+%  This is the STAND-ALONE version of the table: it uses only standard
+%  LaTeX macros (no \Rratio, \effrank, \tblwidth shortcuts) so it can be
+%  \input{} into any document or compiled on its own with booktabs.
+%
+%  In the published manuscript this table is set full-width
+%  (\begin{table*}) under the Elsevier cas-dc class; that journal version
+%  is reproduced in comments at the bottom of this file. The numbers are
+%  identical in both versions and are taken verbatim from
+%  results/ecg5000_multiseed_aggregate.csv.
+%
+%  Requires: \usepackage{booktabs}
+% =====================================================================
+\begin{table}[ht]
+  \centering
+  \caption{Multi-seed robustness of the SCD on ECG5000 across 30 random
+    seeds (42--71). Values are mean$\,\pm\,$SD; ranges are [min,\,max];
+    CV is the coefficient of variation of $R_{\mathrm{ratio}}$; the final
+    note gives the NDC-6 violation rate per latent dimension. The
+    geometric metrics ($\mathrm{effrank}_{\varepsilon}$, PC1) separate
+    $d_{\mathrm{model}}=8$ robustly, whereas the NDC-6 crossing at
+    $d_{\mathrm{model}}=8$ is a boundary case.}
+  \label{tab:ecg_multiseed}
+  \begin{tabular}{lccccc}
+    \toprule
+    $d_{\mathrm{model}}$ & $R_{\mathrm{ratio}}$ (mean$\,\pm\,$SD)
+      & [min,\,max] & CV (\%) & $\mathrm{effrank}_{\varepsilon}$
+      & PC1 (\%) \\
+    \midrule
+    \phantom{0}8  & $0.508 \pm 0.064$ & [0.394,\,0.632] & 12.6
+      & $8.0 \pm 0.0$  & $62.7 \pm 4.6$ \\
+    16            & $0.561 \pm 0.047$ & [0.448,\,0.657] & \phantom{0}8.3
+      & $15.8 \pm 0.4$ & $47.6 \pm 4.4$ \\
+    32            & $0.573 \pm 0.038$ & [0.483,\,0.654] & \phantom{0}6.6
+      & $19.9 \pm 0.5$ & $43.8 \pm 3.1$ \\
+    \midrule
+    \multicolumn{6}{l}{\footnotesize NDC-6 violation rate ---
+      $d_{\mathrm{model}}{=}8$: 40\%; ${=}16$: 10\%; ${=}32$: 3\%.}\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% =====================================================================
+%  JOURNAL VERSION (Neurocomputing cas-dc, full-width). For reference;
+%  uses the manuscript-preamble macros \Rratio, \effrank, \tblwidth.
+%
+%  \begin{table*}[t]
+%    \centering
+%    \caption{Multi-seed robustness of the SCD on ECG5000 across 30 random
+%      seeds (42--71). ...}
+%    \label{tab:ecg_multiseed}
+%    \begin{tabular*}{\tblwidth}{@{\extracolsep{\fill}}lccccc@{}}
+%      \toprule
+%      \(d_{\mathrm{model}}\) & \(\Rratio\) (mean\,\(\pm\)\,SD)
+%        & [min,\,max] & CV (\%) & \(\effrank_{\varepsilon}\) & PC1 (\%) \\
+%      \midrule
+%      \phantom{0}8  & \(0.508 \pm 0.064\) & [0.394,\,0.632] & 12.6
+%        & \(8.0 \pm 0.0\)  & \(62.7 \pm 4.6\) \\
+%      16            & \(0.561 \pm 0.047\) & [0.448,\,0.657] & \phantom{0}8.3
+%        & \(15.8 \pm 0.4\) & \(47.6 \pm 4.4\) \\
+%      32            & \(0.573 \pm 0.038\) & [0.483,\,0.654] & \phantom{0}6.6
+%        & \(19.9 \pm 0.5\) & \(43.8 \pm 3.1\) \\
+%      \midrule
+%      \multicolumn{6}{@{}l@{}}{\footnotesize NDC-6 violation rate:
+%        \(d_{\mathrm{model}}=8\): 40\%; \(=16\): 10\%; \(=32\): 3\%.}\\
+%      \bottomrule
+%    \end{tabular*}
+%  \end{table*}
+% =====================================================================
